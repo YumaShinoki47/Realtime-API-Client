@@ -2,6 +2,9 @@
 
 OpenAIのRealtime APIを使用したリアルタイム音声対話アプリケーションです。マイクからの音声入力をリアルタイムでAIに送信し、AI応答を音声で受け取ることができます。
 
+![image](https://github.com/user-attachments/assets/7744efe6-30e3-48bd-bb23-d044b1f431bf)
+
+
 ## 機能
 
 - リアルタイム音声入力・出力
