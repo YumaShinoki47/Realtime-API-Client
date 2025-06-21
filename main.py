@@ -87,8 +87,8 @@ async def receive_audio_to_queue(websocket): ## websocket接続と、音声出�
             "voice": "echo",        ## "alloy","echo","shimmer","ash","ballad","coral","sage","verse"から選べる
             ## ターン検出の設定
             "turn_detection": {
-                "type": "server_vad",
-                "threshold": 0.5,
+                "type": "semantic_vad",
+                # "threshold": 0.5,
             },
             ## 文字起こしに必要
             "input_audio_transcription": {
@@ -138,7 +138,7 @@ async def receive_audio_to_queue(websocket): ## websocket接続と、音声出�
             elif "type" in response_data and response_data["type"] == "response.done":
                 # print("応答完了")
                 # print("\n(音声受付中…)")
-                print("\n【AI 】", end = "", flush = True)
+                print("\n\n【AI 】", end = "", flush = True)
 
                 ## 会話履歴を更新
                 # print("会話履歴を保存しました")
@@ -183,7 +183,7 @@ async def stream_audio_and_receive_response():
 
     ## WebSocketに接続
     async with websockets.connect(WS_URL, extra_headers=HEADERS) as websocket: ## このwebsocketに接続することで、OpenAIモデルに繋ぐ
-        print("【システム】WebSocketに接続しました")        
+        print("\n【システム】WebSocketに接続しました")        
         
         # PyAudioの設定
         INPUT_CHUNK = 2400 # マイクからの入力データのチャンクサイズ、データの読み取り単位サイズ
